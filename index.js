@@ -77,11 +77,6 @@ bot.onText(/\/start/, async (msg) => {
       console.error('Error sending photo and buttons:', err);
     });
 
-    // Отправляем приветственное сообщение с кнопкой
-    bot.sendMessage(chatId, `Привет, ${firstName}!`, {
-        reply_markup: replyMarkup
-    });
-
     // Отправка события в Mixpanel
     mixpanel.track('Start Command Used', {
         distinct_id: user.id,
