@@ -55,7 +55,7 @@ bot.onText(/\/start/, async (msg) => {
     const user = msg.from;
 
   
-    const appUrl = `https://cosmic-mousse-785ac6.netlify.app/?userId=${userId}`;
+    const appUrl = `https://cosmic-mousse-785ac6.netlify.app`;
     const channelUrl = `https://t.me/any_tap`;
 
     const imagePath = path.join(__dirname, 'images', 'Octies_bot_logo.png');
