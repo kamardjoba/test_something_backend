@@ -62,12 +62,12 @@ bot.onText(/\/start/, async (msg) => {
     
     console.log(`Sending photo from path: ${imagePath}`);
     await bot.sendPhoto(chatId, imagePath, {
-      caption: "How cool is your Telegram profile? Check your rating and receive rewards 🐙",
+      caption: "For 5 TON, you receive a meme NFT that will reward the owner once our main application is launched!",
       reply_markup: {
         inline_keyboard: [
           [
-            { text: "Let's Go!", web_app: { url: appUrl } },
-            { text: 'Join OCTIES Community', url: channelUrl }
+            { text: "Go Mint!", web_app: { url: appUrl } },
+            { text: 'Join AnyTap', url: channelUrl }
           ]
         ]
       }
