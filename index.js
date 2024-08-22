@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const app = express();
+const cors = require('cors');
 const port = process.env.PORT || 3001;
 const TelegramBot = require('node-telegram-bot-api');
 const Mixpanel = require('mixpanel');
@@ -11,7 +12,6 @@ const mixpanelToken = 'd93f06d54e461eeeab94adbd32b16acc';
 const bot = new TelegramBot(token, { polling: true });
 const mixpanel = Mixpanel.init(mixpanelToken);
 const API_KEY = 'AHCO3MMTZPF5ZHYAAAAJMZSUGTJ33HZWFSJWCZPYRGDZSVXFQ3Z3NVB4CW6VALWWZIRSOWY';
-
 
 
 app.use(cors());
