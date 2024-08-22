@@ -8,7 +8,6 @@ const port = process.env.PORT || 3001;
 const TelegramBot = require('node-telegram-bot-api');
 const Mixpanel = require('mixpanel');
 const token = '7477982815:AAHwEnCZlrh_d6X2udQADANXon_Hb3wgxPg';
-
 const mixpanelToken = 'd93f06d54e461eeeab94adbd32b16acc';
 const path = require('path');
 const bot = new TelegramBot(token, { polling: true });
