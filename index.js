@@ -49,20 +49,33 @@ app.get('/api/getTransaction', async (req, res) => {
 });
 
 // Обработчик команды /start
-bot.onText(/\/start/, (msg) => {
+bot.onText(/\/start/, async (msg) => {
     const chatId = msg.chat.id;
     const firstName = msg.from.first_name;
     const user = msg.from;
 
-    // Создаем кнопку с WebAppInfo
-    const webAppButton = {
-        text: "Start",
-        web_app: { url: webAppUrl }
-    };
+  
+    const appUrl = `https://cosmic-mousse-785ac6.netlify.app/?userId=${userId}`;
+    const channelUrl = `https://t.me/any_tap`;
 
-    const replyMarkup = {
-        inline_keyboard: [[webAppButton]]
-    };
+    const imagePath = path.join(__dirname, 'images', 'Octies_bot_logo.png');
+    
+    console.log(`Sending photo from path: ${imagePath}`);
+    await bot.sendPhoto(chatId, imagePath, {
+      caption: "How cool is your Telegram profile? Check your rating and receive rewards 🐙",
+      reply_markup: {
+        inline_keyboard: [
+          [
+            { text: "Let's Go!", web_app: { url: appUrl } },
+            { text: 'Join OCTIES Community', url: channelUrl }
+          ]
+        ]
+      }
+    }).then(() => {
+      console.log('Photo and buttons sent successfully');
+    }).catch((err) => {
+      console.error('Error sending photo and buttons:', err);
+    });
 
     // Отправляем приветственное сообщение с кнопкой
     bot.sendMessage(chatId, `Привет, ${firstName}!`, {
