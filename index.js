@@ -51,7 +51,7 @@ app.get('/api/getTransaction', async (req, res) => {
 // Обработчик команды /start
 bot.onText(/\/start/, async (msg) => {
     const chatId = msg.chat.id;
-    const firstName = msg.from.first_name;
+  
     const user = msg.from;
 
   
