@@ -67,7 +67,7 @@ bot.onText(/\/start/, async (msg) => {
         inline_keyboard: [
           [
             { text: "Go Mint!", web_app: { url: appUrl } },
-            { text: 'Join AnyTap Commnity', url: channelUrl }
+            { text: 'Join AnyTap Community', url: channelUrl }
           ]
         ]
       }
